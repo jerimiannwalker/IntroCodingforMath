@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>section</title>
+
+ <activity xml:id="coding-exercise-partial-two" include-source="no">
+      <title>Activity Coding Exercise</title>
+      <statement>
+        <p>
+          Add 3 to each element of the list.
+        </p>
+      </statement>
+<program label="activity-program" interactive="activecode" language="python" codelens="no">
+<code>
+list = [1,2,3,4,5]
+
+</code>
+<tests>
+</tests>
+</program>
+      <answer>
+        <p>
+          We're still not really sure.
+        </p>
+      </answer>
+    </activity>
+
+
+</section>
