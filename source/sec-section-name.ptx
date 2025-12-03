@@ -69,7 +69,7 @@ operations. Try to figure out what x will be before running the code!
       <input>
       <code>
         x = 4
-        x = x**2
+        x = x**2    #square x
         print(x)
       </code>
     </input>
