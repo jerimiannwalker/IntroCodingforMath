@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Operations with Python</title>
   In this section, we will be learning about things like adding and subtracting in python. You
   will see "variables" or things that can take on any value. In python, you set the value of a 
   variable with an equals sign. You can change the value by resetting it. This will make
   more sense once you run the code examples below. 
-  <subsection xml:id="subsec-">
+  <subsection xml:id="subsection-name">
     <title>Addition, Subtraction, Multiplication, and Division</title>
   <p>
 Python will do basic math operations like addition, subtraction, multiplication
