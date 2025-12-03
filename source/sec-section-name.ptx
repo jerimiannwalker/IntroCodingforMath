@@ -1,29 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>section</title>
+  <title>Basic Operations with Python</title>
+  In this section, we will be learning about things like adding and subtracting in python. You
+  will see "variables" or things that can take on any value. In python, you set the value of a 
+  variable with an equals sign. You can change the value by resetting it. This will make
+  more sense once you run the code examples below. 
+  <subsection xml:id="subsec-">
+    <title>Addition, Subtraction, Multiplication, and Division</title>
+  <p>
+Python will do basic math operations like addition, subtraction, multiplication
+and division. In the following example we create a variable x,
+set its value to be 1, and then change its value using various operations. Comments
+in code start with a "#" and are ignored when the code is run. This allows us to let 
+others know what we are doing. 
 
- <activity xml:id="coding-exercise-partial-two" include-source="no">
-      <title>Activity Coding Exercise</title>
-      <statement>
-        <p>
-          Add 3 to each element of the list.
-        </p>
-      </statement>
-<program label="activity-program" interactive="activecode" language="python" codelens="no">
-<code>
-list = [1,2,3,4,5]
+  </p>
+    <p>
+      Run the following code. The print command will tell you the value of x after all the
+operations. Try to figure out what x will be before running the code!
+    </p>
+  <p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+      
+  <code>
+    x = 1       #set the value of x to 1
+    x = x + 1   #add 1 to x
+    x = x*2     #multiply x by 2
+    x = x - 5   #subtract 5 from x
+    print(x)    #print x
+  </code>
 
-</code>
-<tests>
+    </input>
+  </program>
+  <tests>
 </tests>
-</program>
-      <answer>
-        <p>
-          We're still not really sure.
-        </p>
-      </answer>
-    </activity>
+ </p>
+<p>
+  Notice that we did not divide. There are two ways to divide in python. For now, we
+  will concern ourselves with standard division. But if we take an integer and divide,
+  a "float" or decimal number will be returned. This is not important now, but will be later.
+</p>
+<p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+      
+  <code>
+    x = 4       #set the value of x to 4
+    x = x/2     #divide x by 2 - will return a float
+    print(x)    #print x
+  </code>
+    </input>
+  </program>
+  <tests>
+</tests>
+ </p>
+</subsection>
 
-
+<subsection>
+  <title>Powers and Roots</title>
+  <p>
+    You may be used to typing an exponent as something like 4^2 = 16. In python, we write this
+    as 4**2. 
+  </p>
+  <p>
+    <program codelens="no" language="python" interactive="activecode">
+      <input>
+      <code>
+        x = 4
+        x = x**2
+        print(x)
+      </code>
+    </input>
+    </program>  
+  </p>
+  <p>
+    Recall from mathematics that roots can be represented by powers. 
+    <md>x^{\frac{1}{n}} = \sqrt[n]{x}</md>
+  </p>
+</subsection>
 </section>
