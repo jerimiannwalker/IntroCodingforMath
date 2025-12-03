@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Operations with Python</title>
   In this section, we will be learning about things like adding and subtracting in python. You
   will see "variables" or things that can take on any value. In python, you set the value of a 
@@ -77,7 +77,137 @@ operations. Try to figure out what x will be before running the code!
   </p>
   <p>
     Recall from mathematics that roots can be represented by powers. 
-    <md>x^{\frac{1}{n}} = \sqrt[n]{x}</md>
+    <md>x^{\dfrac{1}{n}} = \sqrt[n]{x}</md>
   </p>
+  <p>
+    One way to find roots then would be to take to fractional exponents. This is not the only
+    way though. Another way is to use a library, which is something we explore later. For now,
+    if we need to find a root, we will use an exponent as below.
+  </p>
+  <p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+      
+  <code>
+    x = 81      
+    x = x**(1/2)     #take the square root of x, or x to the 1/2 power
+    print(x)    
+  </code>
+    </input>
+  </program>
+  <tests>
+</tests>
+ </p>
+ <p>
+  Once again, a float is returned. For numbers that are not perfect squares, we might not
+  want all the decimal places python will show us. We can use the round() function to get the 
+  number of decimal places we would like to see. To do this, we have to actually change x. That is 
+  why we have "x =" before the round() function.
+ </p>
+ <p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+      
+  <code>
+    x = 11
+    x = x**(1/2)
+    print(x)    
+    x = round(x,2)     #round to 2 decimal places
+    print(x)       #print x again to see the change
+  </code>
+    </input>
+  </program>
+  <tests>
+</tests>
+ </p>
 </subsection>
+<conclusion>
+  <p>
+  In this section, you learned about operations on numbers, but you also learned about working
+  with variables, floats (decimals) vs integers, and the round() function. The exercises after each
+  section will help you practice the material presented. If you have not installed python on your
+  machine, you can write this code from any computer connected to the internet using google colab:
+  https://colab.research.google.com/. 
+  </p>
+</conclusion>
+<exercises>
+  <exercise>
+    <statement>
+    Set a variable called "number" equal to 5. Add 10 to "number", multiply "number" by 5,
+    and subtract 7. Finally, print number. What is the value of number?
+    </statement>
+    <solution>
+    <p>
+      Remember at each stage, you must reassign the value to number. This is
+      done with the equals sign. Finally, print() will print the variable you pass to it. NOtice 
+      that the operations do not have to be on one line. Python will follow order of operations,
+      so you can multiply by 5 and subtract 7 on the same line.
+      <program>
+      <code>
+        number = 5
+        number = number + 10
+        number = 5*number - 7
+        print(number)
+      </code>
+    </program>
+    </p>
+  </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the value of: <md>3(1+4)^{6}-15</md>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Since python follows order of operations, you can set a variable equal to the
+        expression and print.
+        <program language="python">
+          <input>
+        x = 3(1+4)**6 - 15
+        print(x)
+          </input>
+        </program>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find one solution to <md>2x^2-x+5=0</md> and round to two decimal places.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        The quadratic formula will be helpful.
+      </p>
+    </hint>
+    <hint>
+      <p>
+        The quadratic formula is:
+        <md>x = \dfrac{-b \pm \sqrt{b^{2}-4ac}{2a}</md>
+        where <m>a</m> is the coefficient of <m>x^2</m>, <m>b</m> is the 
+        coefficient of <m>x</m>, and <m>c</m> is the constant. You can just use "+"
+        from "<m>\pm</m>" to get one root. 
+
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Using the quadratic formula, we can find one root. While you could type it all in one
+      line, it is easier to break up into two parts. For the negative in the formula, you must
+      multiply by <m>-1</m>.
+        <program language="python">
+          <input>
+        x = -1*(-1) + ((-1)**2-4*2*5) #top of fraction
+        x = x/(2*2)
+        x = round(x,2)
+        print(x)
+          </input>
+        </program>
+      </p>
+    </solution>
+  </exercise>  
+</exercises>
 </section>

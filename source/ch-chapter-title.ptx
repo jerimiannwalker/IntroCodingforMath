@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Chapter Title</title>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p> This book is designed for those with some knowledge of mathematics that want
+      to learn how to use python to do and explore math. It assumes no coding knowledge. 
+    As you work through the book, there are coding exercises. You can install python on your
+  local machine or use google colab: https://colab.google/ to complete these. Please feel free
+to contact me with any questions at walkerj95@morainevalley.edu.</p>
   </introduction>
 
   <!-- include sections -->
