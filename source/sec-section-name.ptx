@@ -186,7 +186,7 @@ operations. Try to figure out what x will be before running the code!
     <hint>
       <p>
         The quadratic formula is:
-        <md>x = \dfrac{-b \pm \sqrt{b^{2}-4ac}{2a}</md>
+        <m>x = \dfrac{-b \pm \sqrt{b^{2}-4ac}}{2a}</m>
         where <m>a</m> is the coefficient of <m>x^2</m>, <m>b</m> is the 
         coefficient of <m>x</m>, and <m>c</m> is the constant. You can just use "+"
         from "<m>\pm</m>" to get one root. 
