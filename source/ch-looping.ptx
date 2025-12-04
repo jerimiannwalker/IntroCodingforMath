@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-looping" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Looping</title>
+
+  <introduction>
+    <p> 
+        A loop allows us to repeat code multiple times without having to
+        write it over and over again. There are two main types of loops in python:
+        while loops and for loops. In this section, we will learn how to use both types
+        of loops.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="while-loops.ptx" />
+  <xi:include href="for-loops.ptx" />
+
+</chapter>

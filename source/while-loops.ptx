@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="while-loops" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>While Loops</title>
+  <introduction>
+  <p>
+A while loop runs "while" something is true. As long as the condition is true, it will
+keep repeating the code. This can be dangerous though! If the rule is never false, the loop
+will never end. We must be careful to make sure that our rule will eventually be false. 
+  </p>
+</introduction>
+<subsection xml:id="example-of-while-loop">
+  <title>Example of a While Loop</title>
+  <p>
+    Let's look at an example of a while loop. In this example, we will start with a variable
+    set to 1, and we will keep doubling it while it is less than 100.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+x = 1
+while x &lt; 100:   #while x is less than 100
+    x = x * 2      #double the value of x
+print(x)
+      </input>
+    </program>
+  </p>
+<p>
+    In this code, the value of x is first set to be 1. Then, the while loop checks to see if
+    x is less than 100. Since it is, it multiplies x by 2, and the value of x is 2. Then, the
+    while loop checks again to see if x is less than 100. It is, so it doubles x again, and x
+    is now 4. This continues to where x is 8, 16, 32, 64, and then finally 128. Then, when
+    the while loop checks to see if x is less than 100, it finds that it is not, so it stops. It 
+    then prints the value of x, which is 128.
+</p>
+</subsection>
+</section>
