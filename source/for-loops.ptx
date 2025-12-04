@@ -4,7 +4,154 @@
   <title>For Loops</title>
   <introduction>
   <p>
-stuff 
+For loops repeat a block of code a set number of times. This is useful when we know ahead
+of time how many times we want to repeat something. For loops are often used with
+lists and ranges.
   </p>
 </introduction>
+<subsection xml:id="lists">
+  <title>Lists</title>
+  <p>
+    A list is a collection of thing, in a specific order. In python, we can create lists using
+    square brackets, with commas between each item in the list. The following are each lists.
+  </p>
+  <p>
+    <program lamguage="python">
+      <input>
+    <code>
+      myList = [2,4,6,8,10]
+    </code>
+  </input>
+    </program>
+  </p>
+  <p>
+    <program lamguage="python">
+      <input>
+    <code>
+      people = [Abdul, Maria, Joseph]
+    </code>
+    </input>
+    </program>
+  </p>
+  <p>
+    
+  For loops allow us to go through each item in a list, one at a time. One way to do this
+  is to name the elements of the list and use the word "in."
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myList = [2,4,6,8,10]
+for number in myList:  #for every number in the list myList
+    print(number)       #print the number
+      </input>
+    </program>
+  </p>
+  <p>
+    This code runs through each item in "myList" and prints it one at a time. This is different
+    than printing the whole list at once. As you can see below, just printing "myList" gives
+    the entire list as one output.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myList = [2,4,6,8,10]
+print(myList)   #print the whole list at once
+      </input>
+    </program>
+  </p>
+  </subsection>
+<subsection xml:id="ranges">
+  <title>Ranges</title>
+  <p>
+The range function in python creates a list of numbers, in order, starting from 0 and going up to
+one less than the number you give it. For example, the code below creates a list of numbers
+from 0 up to 9. Notice we have to add a "list" function around the range function.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myRange = list(range(10))   #create a list from 0 to 9
+print(myRange)        #print the list
+      </input>
+    </program>    
+  </p>
+  <p>
+    You can start a range from any value by giving it two numbers. The first number
+    is where the list will start, and the second number is where it will stop - remembering
+    it will stop one before that number.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myRange = list(range(5,15))   #create a list from 5 to 14
+print(myRange)          #print the list
+      </input>
+    </program>
+  </p>
+<p>
+Ranges combined with for loops allow us to repeat a block of code a set number of times. Imagine
+if we wanted to take a variable "number," and add 5 to it ten times. We can do this using a range
+with a for loop. Since we are not making a list, we do not need to use the list function.
+</p>
+<p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+number = 0
+for i in range(10):       #repeat the following block 10 times
+    number = number + 5   #add 5 to number
+print(number)
+      </input>
+    </program>
+</p>
+<p>
+  The variable i is a placeholder that takes on each value in the range as the loop runs. However,
+  since we are not using i in the code block, it does not affect the outcome. After running this code,
+  the value of number is 50, since we added 5 to it ten times. Even though the range stops
+  at 9, the loop still runs ten times, since it starts counting from 0.
+</p>
+<p>
+  We would get the same result writing "range(0,10)" or "range(1,11)." In the first case, the
+  value of i would go from 0 to 9, and in the second case, it would go from 1 to 10. But in both
+  cases, the loop runs ten times.
+</p>
+<p>
+  What is useful about having a placeholder like i is that we can use it within the code block.
+  This is even more useful, as we can refer to items in a list by their index. The index
+  is the location of an element in the list. It starts at 0 for the first item. For example,
+  in the list [2,4,6,8,10], the index of 2 is 0, the index of 4 is 1, the index of 6 is 2, and so
+  on.
+</p>
+<p>
+  To refer to an item in a list this way, we write the name of the list, followed by square
+  brackets with the index inside. The notation "myList[2]" represents the element of myList
+  with index 2. Remembering the index starts at zero, that would be 6.
+</p>
+<p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+myList = [2,4,6,8,10]
+print(myList[2])   #print the item in myList with index 2
+    </input>
+  </program>
+</p>
+<p>
+This indexing is useful when combined with for loops and ranges. If we wanted to add 5
+to each element in a list, we could use this indexing method. The code below does this.
+</p>
+<p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myList = [2,4,6,8,10]
+for i in range(5):            #repeat the following block 5 times
+    myList[i] = myList[i] + 5  #add 5 to the item in myList with index i
+print(myList)
+      </input>
+    </program>
+</p>
+<p>
+  This code starts at myList[0] and then adds 5 to it. Then, it goes ot myList[1] and adds 5 to
+  it, and so on, until it has added 5 to each item in the list.
+</p>
+</subsection>
 </section>

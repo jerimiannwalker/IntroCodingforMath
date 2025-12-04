@@ -34,4 +34,32 @@ print(x)
     then prints the value of x, which is 128.
 </p>
 </subsection>
+<exercises>
+  <exercise>
+    <statement>
+      <p>
+        Write a while loop that starts with a variable set to 3, and keeps adding 3 to it
+        while it is less than 50. Print the final value of the variable.
+      </p>
+    </statement>
+    <solution>
+      <p>
+      We will use "x" for our variable name. First, we set it equal to 3. Then, a while
+      loop checks if the value is less than 50. If it is, 3 is added to x. Then, outside of the
+      while loop, we print the value of x. This print happens after the while loop is done.
+      </p>
+      <p>  
+        <program language="python" codelens="no">
+          <input>
+x = 3
+while x &lt; 50:   #while x is less than 50
+    x = x + 3      #add 3 to the value of x
+print(x)
+          </input>
+        </program>  
+      </p>
+    </solution>
+  </exercise>
+</exercises>
+
 </section>
