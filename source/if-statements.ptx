@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="if-statements" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>If Statements</title>
+  <introduction>
+  <p>
+    One of the most basic things in programming is the if statement. This is a block of code
+    that runs "if" something is true. This could be a mathematical statement like "if x is bigger
+    than 5" or it would be something like "if the list contains apples." If the condition is 
+    false, the code simply doesn't run. We will learn how to use if statements in this section.
+  </p>
+  </introduction>
+  <subsection xml:id="checking-equality">
+    <title>Checking Equality</title>
+    <p>
+        So far, we have been using the equals sign (=) to set a variable to a value. But, to check
+        if two things are equal in python, we use a double equals sign (==). This is common in many
+        programming languages.
+    </p>
+      <p>
+        Below, we set the value of x to be 5. Then we check if x is equal to 5. If it is,
+        we add 1 to x. Finally, we print the value of x. Python uses indentation to show
+        what code is inside the if statement. The line that is indented after the if statement
+        is the only line that will run if the condition is true.
+      </p>
+      <p>
+  <program language="python" interactive="activecode" codelens="no">
+    <input>
+
+   x = 5      
+   if x == 5:   #check if x is equal to 5
+       x = x + 1   #if so, add 1 to x
+   print(x)    
+
+    </input>
+  </program>
+ </p>
+ <p>
+    What if instead we checked if x was equal to 7? Let's adjust the code and see what happens.
+ </p>
+ <p>
+    <program language="python" interactive="activecode" codelens="no">
+    <input>
+    x = 5
+    if x == 7:   #check if x is equal to 7
+        x = x + 1   #if so, add 1 to x
+    print(x)
+    </input>
+    </program>
+</p>
+<p>
+This time, the statement we were checking was false, so the code indented after the if statement
+did not run. The values of x is still 5. We did not add 1 to it.
+ </p>
+ </subsection>
+ <subsection xml:id="checking-inequality">
+    <title>Checking Inequality</title>
+    <p>
+        It is also possible to check if two things are not equal. This is done with the 
+        "not equal" operator (!=). Let's check if x is not equal to 7, and then add 1 if that
+        is the case.
+    </p>
+    <p>    
+    <program language="python" interactive="activecode" codelens="no">
+    <input>
+    x = 5
+    if x != 7:   #check if x is not equal to 7
+        x = x + 1   #if so, add 1 to x
+    print(x)
+    </input>
+    </program>
+</p>
+<p>
+Since x is not 7, the code ran and added 1 to x. The value of x is now 6.
+    </p>
+    <p>
+        When you read inequality, you probably thought about "greater than" or "less than or equal."
+        Those are also possible in if statements. The symbols you would use are:
+        <ul>
+            <li>Greater than: &gt;</li>
+            <li>Less than: &lt;</li>
+            <li>Greater than or equal to: &gt;=</li>
+            <li>Less than or equal to: &lt;=</li>
+        </ul>
+    </p>
+    <p>
+        In the code below, we check if x is less than or equal to 10. If it is, we
+        multiply x by 2. 
+    </p>
+    <p>    
+    <program language="python" interactive="activecode" codelens="no">
+    <input>
+    x = 3
+    if x &lt;=10:   #check if x is less than or equal to 10
+        x = x*2   #if so, multiply x by 2
+    print(x)
+    </input>
+    </program>
+</p>
+<p>
+    If x were 15, the code above would not have multiplied x by 2, and the value of x would have 
+    stayed 15.
+</p>
+    </subsection>
+    <subsection xml:id="else-statements">
+    <title>Else Statements</title>
+        <p>
+    <program language="python" interactive="activecode" codelens="no">
+    <input>
+        x = 2
+        if x &gt; 5:   #check if x is greater than 5
+            x = x + 10   #if so, add 10 to x
+        else:
+            x = x * 4   #if not, multiply x by 4
+        print(x)
+    </input>
+    </program>
+    </p>
+    <p> 
+        Since x is not greater than 5, the if condition is false, and we do not add 10 to x.
+        But, since if was false, the else statement runs, and x is multiplied by 4.
+        The value of x is now 8.   
+    </p> 
+</subsection>
+    <exercises xml:id="exercises-if-statements">
+    <exercise>
+        <statement>
+            <p>
+                Set a variable n equal to 20. Check if n is less than 100, and if it is,
+                add 50 to n. Finally, print n. What is the value of n?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The value of n is 70 because 20 is less than 100, so we added 50 to it.
+            </p>
+            <program language="python">
+                <input>
+n = 20
+if n &lt; 100:
+    n = n + 50
+print(n)
+                </input>
+            </program>
+        </solution>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>
+                Set a variable k equal to 95. Check if k is greater than or equal to 100. 
+                If it is, subtract 20 from k. Otherwise, subtract 5 from k. Finally, print k. 
+                What is the value of k?
+            </p>
+        </statement>
+        <hint>
+            <p>
+                You will need to use an else statement.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                <code>
+k = 95
+if k &gt;= 100:
+    k = k - 20
+else:
+    k = k - 5
+print(k)
+                </code>
+            </p>
+
+            <p>
+                The value of k is 90 because 95 is not greater than or equal to 100, so the if
+                statement does not run. Instead, the else statement is applied. So, 5 is
+                subtracted from k.
+            </p>
+        </solution>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>
+                Set a variable equal to 6, check if it is less than 12, and if it is, 
+                take it to the power of 3. What is the value of your variable?
+            </p>
+        </statement>
+        <hint>
+            <p>
+                You will need to name your variable first.
+            </p>
+        </hint>
+        <hint>
+            <p>
+                Remember that to take something to a power in python, you use **.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                We will call our variable a. You could name it something else if you want.
+
+                <code>
+a = 6
+if a &lt; 12:
+    a = a ** 3
+print(a)
+                </code>
+            </p>
+        </solution>
+    </exercise>
+    </exercises>
+    </section>
