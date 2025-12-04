@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="basic-operations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Basic Operations with Python</title>
   In this section, we will be learning about things like adding and subtracting in python. You
   will see "variables" or things that can take on any value. In python, you set the value of a 
   variable with an equals sign. You can change the value by resetting it. This will make
   more sense once you run the code examples below. 
-  <subsection xml:id="subsection-name">
+  <subsection xml:id="basic-operations-add-subtract-multiply-divide">
     <title>Addition, Subtraction, Multiplication, and Division</title>
   <p>
 Python will do basic math operations like addition, subtraction, multiplication
@@ -58,7 +58,7 @@ operations. Try to figure out what x will be before running the code!
  </p>
 </subsection>
 
-<subsection>
+<subsection xml:id="basic-operations-powers-roots">
   <title>Powers and Roots</title>
   <p>
     You may be used to typing an exponent as something like 4^2 = 16. In python, we write this
@@ -162,10 +162,11 @@ operations. Try to figure out what x will be before running the code!
     <solution>
       <p>
         Since python follows order of operations, you can set a variable equal to the
-        expression and print.
+        expression and print. There needs to be a * in front of the parentheses to
+        represent the multiplication.
         <program language="python">
           <input>
-        x = 3(1+4)**6 - 15
+        x = 3*(1+4)**6 - 15
         print(x)
           </input>
         </program>
