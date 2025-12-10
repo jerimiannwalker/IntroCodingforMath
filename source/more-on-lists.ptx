@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="more-on-lists" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>More on Lists</title>
+  <introduction>
+  <p>
+Lists come up a lot in mathematical programming. There is still a little more we will need
+to know about them before we can use them effectively. In this section, we will look at using
+the length of a list, adding to a list, and creating lists.
+  </p>
+</introduction>
+<subsection xml:id="length-of-a-list">
+  <title>Length of a List</title>
+  <p>
+    The function len() gives the length of a list, which is how many elements the list contains.
+    You may recall that we would look at how many items were in a list in order to determine
+    how long to make a for loop run. Instead you can use len() to determine the stopping
+    point of a loop. The code below shows you the basic concept of the function len().
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+myList = [2,4,6,8,10]
+print(len(myList))   #prints 5 because there are 5 items in myList
+      </input>
+    </program>
+  </p>  
+  <p>
+    Now consider what we were talking about: doing something with a list using a for loop
+    and the lists length. Let's take each element of a list, divide it by 3, round the result
+    to two decimal places, and print it. 
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>   
+        theList = [100,20,1,5,33]
+        for i in range(len(theList)):          #for every index in the list
+            result = round(theList[i] / 3, 2)  #divide the element at that index by 3 and round it
+            print(result)                      #print the result
+            </input>
+    </program>
+</p>
+<p>
+    We could have used range(5) instead of range(len(theList)) since we know the list has 5
+    elements. However, using len() makes our code more flexible. If we later change the
+    list to have more or fewer elements, we won't have to change the for loop. Think about this:
+    we might not even be sure about the length of a list when we write the code. That may seem 
+    strange, but we could have very large lists or lists that change depending on
+    some other aspect of the code. The len() function allows us to write code that will still
+    "hit" every element of the list we want.
+</p>
+</subsection>
+<subsection xml:id="adding-elements-to-a-list">
+    <title>Adding Elements to a List</title>
+    <p>
+        The append() function allows us to add elements to the end of a list. This is useful
+        when we want to build a list as we go, rather than creating it all at once. Let's
+        look at a simple example to see how this works.
+    </p>
+    <p>
+        <program language="python" interactive="activecode" codelens="no">
+        <input>
+theList = [1,2]
+theList.append(3)   #adds 3 to the end of theList
+theList.append(4)   #adds 4 to the end of theList
+print(theList)      #prints [1,2,3,4]
+        </input>
+        </program>
+    </p>
+    <p>
+        Notice that we needed a list to start with in order to use append(). We will not
+        always know what is in the list ahead of time. This comes up when you are building a
+        list based on some calculations or other code. In order to append the elements to the
+        list, we will need to first create an empty list. This is written as "myList = []."
+    </p>
+    <p>
+        <program language="python" interactive="activecode" codelens="no">
+        <input>
+myList = []          #create an empty list
+for i in range(5):   #for every number from 0 to 4
+    myList.append(i) #add that number to the end of myList
+print(myList)       #prints [0,1,2,3,4]
+        </input>
+        </program>
+    </p>
+    <p>
+        Something that will come up later is a list of lists. This is when each element of a 
+        list is itself a list. When we work with matrices, we will use a list of  lists
+        to represent the rows and columns.
+    </p>
+</subsection>
+<exercises xml:id="exercises-more-on-lists">
+    <exercise xml:id="exercise-1-more-on-lists" difficulty="easy">
+        <statement>
+          <p>
+            Create a list of three states that start with the letter "A" using the append() 
+            function. Print your list.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            This does not require a for loop. You can start with an empty list and append.
+          <program language="python"> 
+              <input>
+states = []
+states.append("Alabama")
+states.append("Alaska")
+states.append("Arizona")
+print(states)
+              </input>
+          </program>
+            </p>
+            </solution>
+    </exercise>
+    <exercise xml:id="exercise-2-more-on-lists" difficulty="medium">
+    <statement>
+      <p>
+        Create a list of the first 10 multiples of 4 using a for loop and the append()
+        function. Print your list.
+        </p>
+        </statement>
+        <hint>
+            <p>
+                Do not just type out the multiples of 4. Calculate them
+                using a for loop that goes from 1 to 10 and multiplies each number by 4.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                First, create an empty list. Then, create a for loop that goes from 1 to 10.
+                Inside the loop, calculate the multiple of 4 and append it to the list.
+            <program language="python">
+                <input>
+multiplesOf4 = []
+for i in range(1,11):
+    multiplesOf4.append(i * 4)
+print(multiplesOf4)  #prints [4,8,12,16,20,24,28,32,36,40]
+                </input>
+            </program>  
+
+            </p>
+            <p>
+                Notice that you can do the calculation inside of the append() function. This
+                makes it so no extra variables are needed.
+            </p>
+        </solution>
+        </exercise>
+        <exercise xml:id="exercise-3-more-on-lists" difficulty="hard">
+        <statement>
+            <p>
+                Create a list of the cubes of the first 5 even numbers (2,4,6,8,10) using a for loop
+                and the append() function. Print your list.
+            </p>
+        </statement>
+        <hint>
+            <p> 
+                You can use range() to get the first 5 even numbers by multiplying each number
+                in the range by 2. Then, cube that result and append it to the list.
+            </p>
+        </hint>
+        <hint>
+            <p>
+                You may want to use a variable here to hold the even number
+                before cubing it and appending it to the list. This would be in 
+                the for loop. Something like: even = 2 * i.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                First, create an empty list. Then, create a for loop that goes from 1 to 5.
+                Inside the loop, calculate the even number, cube it, and append it to the list.
+            <program language="python">
+                <input>
+cubesOfEvens = []
+for i in range(1,6):
+    even = 2 * i
+    cubesOfEvens.append(even ** 3)
+print(cubesOfEvens)  #prints [8,64,216,512,1000]
+                </input>
+            </program>  
+            </p>
+        </solution>
+    </exercise>
+</exercises>
+</section>

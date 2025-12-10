@@ -15,5 +15,6 @@
   <!-- include sections -->
   <xi:include href="while-loops.ptx" />
   <xi:include href="for-loops.ptx" />
+  <xi:include href="more-on-lists.ptx" />
 
 </chapter>
