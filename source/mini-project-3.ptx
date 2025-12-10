@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="mini-project-3">
+    <title> Mini Project 3</title>
+  <introduction>
+    <p>
+        Here, you will create a list of numbers 0,50 and then create two new lists: one of 
+        the even numbers and one of the odd numbers. This will give you practice in creating lists,
+        but also it will give you practice in using the "modulus" operator (%). The modulus operator
+        gives the remainder when one number is divided by another. For example, 7 % 2 is 1 because
+        when you divide 7 by 2, the remainder is 1. On the other hand, 8 % 2 is 0 because when you divide
+        8 by 2, there is no remainder. You can use this operator to check if a number is even or odd. If
+        a number % 2 is 0, then the number is even. If a number % 2 is 1, then the number is odd.
+    </p>
+  </introduction>
+<exercise>
+    <statement>
+  <p>
+    You will be using lists and the modulus operator. The modulus operator works as below:
+    <program language="python">
+        <input>
+        #check if even
+        myList = [1,2]
+        for number in myList:
+            if number % 2 == 0:
+                print(number, "is even.") #prints the number if it is even
+        </input>
+        </program>
+  </p>
+    <p>
+    This time, you will need to create two new lists. One for evens and one for odds. These
+    are the two lists you will print out at the end.
+  </p>
+
+    <p>
+        First create the list of numbers from 0 to 50. Then, create two empty lists
+        to store the even and odd numbers. Next, loop through each number in the list
+        of numbers. Use an if statement to check if the number is even or odd using
+        the modulus operator. If the number is even, add it to the even numbers list.
+        If the number is odd, add it to the odd numbers list. Finally, print out
+        both lists.
+    </p>
+    </statement>
+    <solution>
+    <p>
+        An else statement is helpful here since a number is either even or odd. So, you
+        can use two if statements  -  one for even and one for odd  -  or you can use the 
+        else statement after checking for even.
+    </p>
+    <p>
+        <program>
+            <input>
+            numbers = list(range(51))  #create a list of numbers from 0 to 50
+            evenNumbers = []  #create an empty list for even numbers
+            oddNumbers = []   #create an empty list for odd numbers
+
+            for number in numbers:
+                if number % 2 == 0:  #check if the number is even
+                    evenNumbers.append(number)  #add to even numbers list
+                else:
+                    oddNumbers.append(number)   #add to odd numbers list
+
+            print("Even Numbers:", evenNumbers)  #print the list of even numbers
+            print("Odd Numbers:", oddNumbers)    #print the list of odd numbers
+            </input>
+            </program>
+    </p>
+    <p>
+        Notice in the print statement, there is "Even numbers:" before the list. You can
+        print multiple things with a comma separating them. If the thing you are printing
+        is a string (like "Even numbers:"), make sure to put it in quotes. Strings are sequences
+        of letters, numbers, or symbols that are treated as text by python.
+    </p>
+  </solution>
+</section>

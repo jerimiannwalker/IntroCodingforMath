@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="mini-project-1">
+    <title> Mini Project 1</title>
+  <introduction>
+    <p>
+        In this mini project, you will count the number of "5"'s in a list of numbers. Searching
+        a list is a common task in programming, and counting how many times something appears
+        is a good way to practice this skill. But, do know that there are all kinds of algorithms
+        (step by step procedures) that can do this faster. In fact, searching algorithms is an
+        entire area of computer science!
+    </p>
+    <p>
+        Be sure to keep all your code in one document and comment your code well so you
+        can understand what you did when you come back to it later.
+    </p>
+  </introduction>
+<exercise>
+    <statement>
+  <p>
+    The list of numbers you will be searching is given below. You can copy and paste this
+    list into your code to get started.
+  </p>
+  <p>
+    numbers = [3, 5, 2, 8, 5, 1, 5, 7, 9, 5, 4, 6, 5, 0, 5]
+  </p>
+  <p>
+    In order to count, you will need to set up a variable to keep track. You will want to start
+    this variable at 0 since you haven't found any "5"'s yet. Then, you will need to loop through
+    each number in the list and check if it is equal to 5. If it is, you will want to add 1 to your
+    counting variable. Finally, after you have checked all the numbers in the list, you will want to
+    print out the value of your counting variable.
+  </p>
+</statement>
+<solution>
+    <p>
+        For all of these mini projects, there are many ways to solve the problem. You may
+        use different variable names, a different style with your loops, or other small things.
+        Before changing all your code to match this solution, check first if you got the correct
+        count! If you did, great job! If not, try to debug your code first. If you are still stuck,
+        then you can look at this solution for help.
+    </p>
+    <p>
+        The correct count is 6. Here is one way to write the code to get that answer:
+    </p>
+    <p>
+        <program language="python">
+            <input>
+            numbers = [3, 5, 2, 8, 5, 1, 5, 7, 9, 5, 4, 6, 5, 0, 5]
+            count = 0 #start counting at 0 outside the loop
+
+            for number in numbers:
+                if number == 5:   #check if the number is equal to 5
+                    count = count + 1   #if so, add 1 to the count
+            print(count)  #print the final count after the loop
+            </input>
+        </program>
+    </p>
+</solution>
+</exercise>
+  </section>

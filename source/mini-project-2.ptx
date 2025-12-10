@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="mini-project-2">
+    <title> Mini Project 2</title>
+  <introduction>
+    <p>
+        For this mini project, you will be finding all <i>perfect</i> cubes of numbers
+        in a list. You will then create a new list of only these perfect cubes. A perfect cube
+        is a number that can be expressed as the cube of an integer. For example, 27 is a perfect cube
+        because it can be expressed as 3^3 (3 * 3 * 3 = 27). On the other hand, 20 is not a perfect cube
+        because there is no integer that can be cubed to get 20.
+    </p>
+  </introduction>
+<exercise>
+    <statement>
+  <p>
+    The list of numbers you will be working with is below. You can copy and paste this
+    list into your code to get started.
+  </p>
+  <p>
+    numbers = [8, 81, 10, 27, 64, 15, 125, 7, 216, 5, 343, 12]
+  </p>
+  <p>
+    Remember that you will need to create a new list. Do that first. Afterwards, you will need
+    to loop through each number if the list and check if it is a perfect cube. This means that
+    when you take the cube root, the result will be an integer. An integer is a whole number,
+    positive or negative, including zero.</p>
+    <p>
+        You will likely find the function isinstance(value, int) helpful. This function checks
+        if "value" is an integer. It will return True if it is. In an if statement, you can
+        check if the value is true before adding the number to your new list.
+  </p>
+  
+</statement>
+<solution>
+    
+    <p>
+       The correct list of perfect cubes is [8, 27, 64, 125, 216, 343]. Here is one way to
+       write the code to get that answer:
+    </p>
+    <p>
+        <program language="python">
+            <input>
+            numbers = [8, 81, 10, 27, 64, 15, 125, 7, 216, 5, 343, 12]
+            perfectCubes = []  #create an empty list to store perfect cubes
+
+            for number in numbers:
+                cubeRoot = number ** (1/3)  #calculate the cube root
+                if isinstance(cubeRoot, int):  #check if the cube root is an integer
+                    perfectCubes.append(number)  #if so, add the number to the perfectCubes list
+            
+            print(perfectCubes)  #print the list of perfect cubes
+            </input>
+        </program>
+    </p>
+</solution>
+</exercise>
+  </section>

@@ -1,0 +1,19 @@
+
+<chapter xml:id="ch-mini-projects-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Mini Projects 1</title>
+
+  <introduction>
+    <p> 
+        The following are some mini projects that let you practice code we have learned so far.
+        You may have to apply one or two new techniques along with what you have learned, but 
+        the main goal is to get you to practice your coding skills.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="mini-project-1.ptx" />
+  <xi:include href="mini-project-2.ptx" />
+  <xi:include href="mini-project-3.ptx" />    
+
+
+</chapter>
