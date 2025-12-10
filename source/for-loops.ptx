@@ -154,4 +154,117 @@ print(myList)
   it, and so on, until it has added 5 to each item in the list.
 </p>
 </subsection>
+<subsection xml:id="subsec-Counting-by-More-than-One">
+  <title>Counting by More than One</title>
+  <p>
+    The range() function can take a third number like range(0,10,2). This third number tells the range
+    what to count by. So this code would start at 0 an count by 2 up to 8 - remember the last
+    number is not included!
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+    myList = list(range(0,10,2)) #create a list from range
+    print(myList)  #prints [0,2,4,6,8]
+      </input>
+    </program>
+  </p>
+  </subsection>
+  <exercises xml:id="exercises-for-loops">
+    <title>Exercises</title>
+    <exercise xml:id="exercise-1-for-loops" difficulty="easy">
+        <statement>
+          <p>
+            Write a for loop that prints the numbers from 1 to 10.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            You could, but don't need to, create a list here. You could use the range() function
+            instead and print "as you go." Your range should start at 1 and go up to 11, since
+            the last number is not included. 
+          <program language="python"> 
+              <input>
+for i in range(1,11):
+    print(i)
+              </input>
+          </program>
+          </p>
+        </solution>
+    </exercise>
+    <exercise xml:id="exercise-2-for-loops" difficulty="medium">
+    <statement>
+      <p>
+        Write a for loop that adds 3 to each element in the list [1,2,3,4,5] and prints 
+        the new list.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, create the list. You can name it anything you like. Here, I call it simply "theList."
+        <program language="python">
+            <input>
+theList = [1,2,3,4,5]
+            </input>
+          </program>
+        Now, create a for loop that goes through each item in the list. This is where you want
+        to use the indexing method. There are 5 items in the list, so you want to repeat
+        the code block 5 times. You can do this using range(5).
+        <program language="python">
+            <input>
+for i in range(5):
+    theList[i] = theList[i] + 3
+            </input>
+            </program>
+        Finally, print the new list.
+        <program language="python">
+            <input>
+print(theList)
+      </input>  
+        </program>
+        All together, the code looks like this:
+        <program language="python">
+            <input>              
+theList = [1,2,3,4,5]
+for i in range(5):
+    theList[i] = theList[i] + 3
+print(theList)
+        </input>
+        </program>
+      </p>
+    </solution>
+    </exercise>
+    <exercise xml:id="exercise-3-for-loops" difficulty="hard">
+      <statement>
+        <p>
+        Write a for loop that prints the even numbers from 0 to 20.   
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You do not need to create a list. You can use the range() function directly.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Count by 2 in the range list.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Using the range() function, you can create a for loop that prints every other
+          number from 0 to 20.
+          <program language="python">
+          <input>
+for i in range(0,21,2):
+    print(i)
+          </input>
+          </program> 
+          Notice that we go up to 21. The range function stops one before the last number,
+          so to include 20, we have to go one higher.
+        </p>
+      </solution>
+    </exercise>
+    
+  </exercises>
 </section>
