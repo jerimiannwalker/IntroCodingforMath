@@ -26,11 +26,20 @@
     when you take the cube root, the result will be an integer. An integer is a whole number,
     positive or negative, including zero.</p>
     <p>
-        You will likely find the function isinstance(value, int) helpful. This function checks
-        if "value" is an integer. It will return True if it is. In an if statement, you can
-        check if the value is true before adding the number to your new list.
+        You will likely find the function is_integer() helpful. This function checks
+        if a float (decimal) actually represents an integer. It will return True if it does. 
+        In an if statement, you can check if the value is true before adding the number to your new list.
   </p>
-  
+  <p>The function is used as follows:</p>
+  <p>
+    <program language="python">
+        <input>
+        cubeRoot = 3.0
+        if cubeRoot.is_integer(): #we can directly check since it gives true or false
+            print("The cube root is an integer.")
+        </input>
+    </program>
+  </p>
 </statement>
 <solution>
     
@@ -46,7 +55,7 @@
 
             for number in numbers:
                 cubeRoot = number ** (1/3)  #calculate the cube root
-                if isinstance(cubeRoot, int):  #check if the cube root is an integer
+                if cubeRoot.is_integer():  #check if the cube root is an integer
                     perfectCubes.append(number)  #if so, add the number to the perfectCubes list
             
             print(perfectCubes)  #print the list of perfect cubes
