@@ -22,23 +22,16 @@
   </p>
   <p>
     Remember that you will need to create a new list. Do that first. Afterwards, you will need
-    to loop through each number if the list and check if it is a perfect cube. This means that
-    when you take the cube root, the result will be an integer. An integer is a whole number,
-    positive or negative, including zero.</p>
-    <p>
-        You will likely find the function is_integer() helpful. This function checks
-        if a float (decimal) actually represents an integer. It will return True if it does. 
-        In an if statement, you can check if the value is true before adding the number to your new list.
+    to loop through each number if the list and check if it is a perfect cube. One way to check
+    for a perfect cube is to check if the cube root of the number is an integer (whole number or zero).
+    But, there are some weird things that go on with floating point numbers in python. If I ask
+    if 4.999999 is an integer, python will say no, even though it is really close to 5. This could be
+    because the answer really is 4.999999 or due to rounding errors.
   </p>
-  <p>The function is used as follows:</p>
   <p>
-    <program language="python">
-        <input>
-        cubeRoot = 3.0
-        if cubeRoot.is_integer(): #we can directly check since it gives true or false
-            print("The cube root is an integer.")
-        </input>
-    </program>
+    So while there is a way to check if a float (remember: decimal) is really an integer, it is
+    not always accurate. Instead, try taking the cube root, rounding it, and seeing if it cubed gives you
+    back the original number. If it does, then the number is a perfect cube.
   </p>
 </statement>
 <solution>
@@ -54,13 +47,19 @@
             perfectCubes = []  #create an empty list to store perfect cubes
 
             for number in numbers:
-                cubeRoot = number ** (1/3)  #calculate the cube root
-                if cubeRoot.is_integer():  #check if the cube root is an integer
+                cubeRoot = round(number ** (1/3))  #calculate the cube root and round to whole number
+                if cubeRoot**3 == number:  #check if the cubing gives you back the original number
                     perfectCubes.append(number)  #if so, add the number to the perfectCubes list
             
             print(perfectCubes)  #print the list of perfect cubes
             </input>
         </program>
+    </p>
+    <p>
+      This may seem like a round about way to get the perfect cubes, but it avoids
+      the issues with floating point numbers in python. We will find ourselves working with
+      the rounding errors of floating point numbers a lot, and we will see many different 
+      approaches to dealing with them.
     </p>
 </solution>
 </exercise>
