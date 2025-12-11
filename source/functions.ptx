@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Functions</title>
+  <introduction>
+  <p>
+A function takes an input (or none or many inputs) and <i>returns</i> an output.
+This is useful to organize code and make reuseable code. In this section, we
+will write some functions and see how they work!
+  </p>
+</introduction>
+<subsection xml:id="a-function-with-boolean-output">
+  <title>A Function with Boolean Output</title>
+  <p>
+    A boolean variable in python is a variable that takes on the value True or
+    False only. Not a number, not a string, but a truth value. You can use
+    this in if statements to perform actions depending on the truth value.
+  </p>
+  <p>
+    Imagine you are writing code and find that you frequently need to check
+    if a number is a multiple of 5. This is the perfect situation to use a function!
+    A function is defined in the following way.
+  </p>
+  <p>
+    <program language="python">
+      <input>
+        def functionName(input1,input2,input3):
+          function code
+          return output
+      </input>
+    </program>
+  </p>
+  <p>
+    The keywords are "def" to define the function and "return" for the output.
+    You can call a function whatever you want, as long as it is not a name used
+    by python for something else. Let's name our function and the inputs.
+  </p>
+  <p>
+    <program language="python">
+      <input>
+        def mulitpleOfFive(number):
+          code we will write
+      </input>
+    </program>
+  </p>
+  <p>
+    To check if we have a multiple of 5, we will see if there is a remainder
+    when the number is divided by 5. Recall from the mini projects that % will
+    tell you the value of the remainder. So we want a remainder of 0 when the
+    number is divided by 5.
+  </p>
+  <p>
+    <program language="python">
+      <input>
+        def multipleOfFive(number):
+          if number%5==0:
+            return True
+          else:
+            return False
+      </input>
+    </program>  
+  </p>
+  <p>
+    That's it! That is our function! It will return True is the number we put
+    in is a multiple of 5 and false oherwise. It does not print anything, so the 
+    following code will not show anything.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+        def multipleOfFive(number):
+          if number%5==0:
+            return True
+          else:
+            return False
+        
+        multipleOfFive(10)
+      </input>
+    </program>  
+  </p>
+  <p>
+    But, we could put a print statement around it to see the truth value.
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+        def multipleOfFive(number):
+          if number%5==0:
+            return True
+          else:
+            return False
+        
+        print(multipleOfFive(10))
+      </input>
+    </program>  
+  </p>
+  <p>
+    We could also use it in an if statement since it returns true or false. Suppose
+    that if a number is a multiple of 5 that we want to add 2 to it. Then, we could
+    write:
+  </p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+        def multipleOfFive(number):
+          if number%5==0:
+            return True
+          else:
+            return False
+        
+        number = 10
+
+        if multipleOfFive(number):
+          number = number + 2
+          print(number)
+      </input>
+    </program>  
+  </p>
+
+</subsection>
+<subsection xml:id="quadratic-formula-function">
+  <title>Quadratic Formula Function</title>
+  <p>
+    In chapter 1, you wrote code to solve one quadratic equation. In fact, you
+    found only one real root of that equation. It is quite a bit to type to
+    even find one root. That is the type of code that is useful to write as a function.
+  </p>
+  <p>
+    Recall that the solutions to a quadratic equation <m>ax^2+bx+c=0</m> are:
+    <m>x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}</m>
+    The roots are real numbers as long as we take the square root of positive numbers.
+    If <m>b^2-4ac &lt; 0</m>, then we are taking the square root of a negative and the
+    roots will be complex numbers.
+  </p>
+  <p>
+    Let's say we just want real roots. Our function should test for real roots first.
+    It is common to return something like "False" when the case does not work. That is what 
+    we will do here.
+  </p>
+  <p>
+    <program language="python">
+      <input>
+        def realQuadraticSolutions(a,b,c):
+          if (b**2 - 4*a*c) &lt; 0:
+            return False 
+      </input>
+    </program>
+  </p>
+  <p>
+    Due to the <m>\pm</m>, there are two roots. We will find each of these and then
+    return a list of roots. So, we will need to define a list, find the roots, and then
+    append them to the list. Finally, we will return the list. 
+  </p>
+  <p>
+    <program language="python">
+      <input>
+        def realQuadraticSolutions(a,b,c):
+          if (b**2 - 4*a*c) &lt; 0:
+            return False
+          else:
+            roots = [] #define the list
+            root1 = (-1*b + (b**2-4*a*c)**0.5)/2*a #the plus root
+            root2 = (-1*b - (b**2 - 4*a*c)**0.5)/2*a #the minus root
+            roots.append(round(root1,2)) #round to 2 decimals and append to list
+            roots.append(round(root2,2)) #same
+          return roots
+      </input>
+    </program>
+  </p>
+  <p>
+    Let's test our function out. What if we had <m>2x^2 + 5x - 1 = 0</m>?
+  </p>
+
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+        def realQuadraticSolutions(a,b,c):
+          if (b**2 - 4*a*c) &lt; 0:
+            return False
+          else:
+            roots = [] #define the list
+            root1 = (-1*b + (b**2-4*a*c)**0.5)/2*a #the plus root
+            root2 = (-1*b - (b**2 - 4*a*c)**0.5)/2*a #the minus root
+            roots.append(root1) #append to list
+            roots.append(root2) #append to list
+          return roots
+
+        #testing
+        print(realQuadraticSolutions(2,5,-1))   
+      </input>
+    </program>
+  </p>
+<p>
+  There are many ways to improve this function. For example, if someone types 0 for a,
+  we will have issues since we are dividing by a. You could put an error message in, or
+  comment your code that a can't be zero. We should also test that it correctly
+  returns False when there are no real roots.
+</p>
+  <p>
+    <program language="python" interactive="activecode" codelens="no">
+      <input>
+        def realQuadraticSolutions(a,b,c):
+          if (b**2 - 4*a*c) &lt; 0:
+            return False
+          else:
+            roots = [] #define the list
+            root1 = (-1*b + (b**2-4*a*c)**0.5)/2*a #the plus root
+            root2 = (-1*b - (b**2 - 4*a*c)**0.5)/2*a #the minus root
+            roots.append(root1) #append to list
+            roots.append(root2) #append to list
+          return roots
+
+        #testing
+        print(realQuadraticSolutions(1,1,2))   
+      </input>
+    </program>
+  </p>
+</subsection>
+</section>

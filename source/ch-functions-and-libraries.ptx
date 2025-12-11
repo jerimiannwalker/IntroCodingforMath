@@ -1,0 +1,16 @@
+
+<chapter xml:id="functions-and-libraries" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Functions and Libraries</title>
+
+  <introduction>
+    <p> 
+        
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="functions.ptx" />
+   
+
+
+</chapter>
