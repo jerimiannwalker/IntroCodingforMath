@@ -15,6 +15,7 @@
     <xi:include href="./ch-introduction.ptx" />
     <xi:include href="./ch-looping.ptx" />
     <xi:include href="./ch-mini-projects-1.ptx" />
+    <xi:include href="./ch-functions-and-libraries.ptx" />
 
 
     <!-- Include backmatter -->

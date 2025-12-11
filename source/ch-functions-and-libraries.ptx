@@ -4,7 +4,11 @@
 
   <introduction>
     <p> 
-        
+        In python, functions allow us to group together and reuse code. They
+        have inputs and outputs just like mathematical functions. Libraries are collections
+        of functions for a specific task, like the math library, which contains
+        functions for things like roots. You will learn how to write and use your own
+        functions as well as how to take advantage of libraries in this chapter.
     </p>
   </introduction>
 
