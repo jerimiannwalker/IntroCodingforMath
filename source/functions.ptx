@@ -215,5 +215,77 @@ will write some functions and see how they work!
       </input>
     </program>
   </p>
+  <p>
+    As you can see, we correctly get False when there are no real roots.
+  </p>
+<exercises xml:id="exercises-functions">
+  <exercise>
+    <statement>
+      <p>
+        Write a function that finds the sum of two numbers and returns the result.
+        Print the result of adding 8 and 5 together to verify your function works.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Remember that just like variables, you can name your functions and inputs
+        just about anything. 
+      </p>
+      <p>
+        <program language="python">
+          <input>
+        def sumTwoNumbers(num1,num2):
+          return num1 + num2
+
+        print(sumTwoNumbers(8,5))
+          </input>
+          </program>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Write a function with three inputs that returns true if the third input
+        is the product of the first two inputs and false otherwise. Check your 
+        function with two sets of inputs: (3,4,12) and (2,5,8).
+      </p>
+    </statement>
+    <solution>
+      <p>
+       <program language="python">
+          <input>
+        def isProduct(num1,num2,num3):
+          if num1 * num2 == num3:
+            return True
+          else:
+            return False
+
+        print(isProduct(3,4,12))
+        print(isProduct(2,5,8))
+          </input>
+          </program>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Write a function that find the area of a triangle given the base and height.
+        Find the area of the triangle with base 10 and height 5.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <program language="python">
+          <input>
+        def triangleArea(base,height):
+          return 0.5 * base * height    
+        print(triangleArea(10,5))
+          </input>
+          </program>
+      </p>
+    </solution>
+</exercises>
 </subsection>
 </section>
