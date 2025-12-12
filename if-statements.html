@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>If Statements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Introduction to Coding for Math">
+<meta property="book:author" content="Jerimi Ann Walker">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.f91c1a4dc12163f2.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.731d8387162b79c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.557d81b04b3ec0e4.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="intro-coding-for-math.html"><span class="title">Introduction to Coding for Math</span> <span class="subtitle">From Nothing to Mathematics with Python</span></a></h1>
+<p class="byline">Jerimi Ann Walker</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="basic-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-introduction.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-looping.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-introduction.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="basic-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Operations with Python</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="basic-operations.html#basic-operations-add-subtract-multiply-divide" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Addition, Subtraction, Multiplication, and Division</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="basic-operations.html#basic-operations-powers-roots" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Powers and Roots</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="basic-operations.html#basic-operations-6" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="if-statements.html" class="internal"><span class="codenumber">1.2</span> <span class="title">If Statements</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="if-statements.html#checking-equality" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Checking Equality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="if-statements.html#checking-inequality" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Checking Inequality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="if-statements.html#else-statements" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Else Statements</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="if-statements.html#exercises-if-statements" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-looping.html" class="internal"><span class="codenumber">2</span> <span class="title">Looping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="while-loops.html" class="internal"><span class="codenumber">2.1</span> <span class="title">While Loops</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="while-loops.html#example-of-while-loop" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Example of a While Loop</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="while-loops.html#while-loops-4" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="for-loops.html" class="internal"><span class="codenumber">2.2</span> <span class="title">For Loops</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="for-loops.html#lists" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="for-loops.html#ranges" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Ranges</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="for-loops.html#subsec-Counting-by-More-than-One" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Counting by More than One</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="for-loops.html#exercises-for-loops" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="more-on-lists.html" class="internal"><span class="codenumber">2.3</span> <span class="title">More on Lists</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="more-on-lists.html#length-of-a-list" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Length of a List</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="more-on-lists.html#adding-elements-to-a-list" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Adding Elements to a List</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="more-on-lists.html#exercises-more-on-lists" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-mini-projects-1.html" class="internal"><span class="codenumber">3</span> <span class="title">Mini Projects 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="mini-project-1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Mini Project 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="mini-project-2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Mini Project 2</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="mini-project-3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Mini Project 3</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="functions-and-libraries.html" class="internal"><span class="codenumber">4</span> <span class="title">Functions and Libraries</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="functions.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="functions.html#a-function-with-boolean-output" class="internal"><span class="codenumber">4.1.1</span> <span class="title">A Function with Boolean Output</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="functions.html#quadratic-formula-function" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Quadratic Formula Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="functions.html#exercises-functions" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="if-statements"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">If Statements</span>
+</h2>
+<section class="introduction" id="if-statements-2"><div class="para" id="if-statements-2-1">One of the most basic things in programming is the if statement. This is a block of code that runs "if" something is true. This could be a mathematical statement like "if x is bigger than 5" or it would be something like "if the list contains apples." If the condition is false, the code simply doesn’t run. We will learn how to use if statements in this section.<div class="autopermalink" data-description="Paragraph"><a href="#if-statements-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="checking-equality"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Checking Equality</span>
+</h3>
+<div class="para" id="checking-equality-2">So far, we have been using the equals sign (=) to set a variable to a value. But, to check if two things are equal in python, we use a double equals sign (==). This is common in many programming languages.<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-equality-3">Below, we set the value of x to be 5. Then we check if x is equal to 5. If it is, we add 1 to x. Finally, we print the value of x. Python uses indentation to show what code is inside the if statement. The line that is indented after the if statement is the only line that will run if the condition is true.<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-equality-4">
+<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id=""><textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="_editor" data-question_label="" data-codelens="false" data-timelimit="25000">x = 5      
+if x == 5:   #check if x is equal to 5
+    x = x + 1   #if so, add 1 to x
+print(x)
+</textarea></div></div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-equality-5">What if instead we checked if x was equal to 7? Let’s adjust the code and see what happens.<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-equality-6">
+<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id=""><textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="_editor" data-question_label="" data-codelens="false" data-timelimit="25000">x = 5
+if x == 7:   #check if x is equal to 7
+    x = x + 1   #if so, add 1 to x
+print(x)
+</textarea></div></div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-equality-7">This time, the statement we were checking was false, so the code indented after the if statement did not run. The values of x is still 5. We did not add 1 to it.<div class="autopermalink" data-description="Paragraph"><a href="#checking-equality-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.2.1: Checking Equality"><a href="#checking-equality" title="Copy heading and permalink for Subsection 1.2.1: Checking Equality" aria-label="Copy heading and permalink for Subsection 1.2.1: Checking Equality">🔗</a></div></section><section class="subsection" id="checking-inequality"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Checking Inequality</span>
+</h3>
+<div class="para" id="checking-inequality-2">It is also possible to check if two things are not equal. This is done with the "not equal" operator (!=). Let’s check if x is not equal to 7, and then add 1 if that is the case.<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-inequality-3">
+<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id=""><textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="_editor" data-question_label="" data-codelens="false" data-timelimit="25000">x = 5
+if x != 7:   #check if x is not equal to 7
+    x = x + 1   #if so, add 1 to x
+print(x)
+</textarea></div></div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-inequality-4">Since x is not 7, the code ran and added 1 to x. The value of x is now 6.<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="checking-inequality-5">
+<div class="para">When you read inequality, you probably thought about "greater than" or "less than or equal." Those are also possible in if statements. The symbols you would use are:</div>
+<ul class="disc" id="checking-inequality-5-1">
+<li id="checking-inequality-5-1-1">
+<div class="para" id="p-derived-checking-inequality-5-1-1">Greater than: &gt;</div>
+<div class="autopermalink" data-description="Item"><a href="#checking-inequality-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="checking-inequality-5-1-2">
+<div class="para" id="p-derived-checking-inequality-5-1-2">Less than: &lt;</div>
+<div class="autopermalink" data-description="Item"><a href="#checking-inequality-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="checking-inequality-5-1-3">
+<div class="para" id="p-derived-checking-inequality-5-1-3">Greater than or equal to: &gt;=</div>
+<div class="autopermalink" data-description="Item"><a href="#checking-inequality-5-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="checking-inequality-5-1-4">
+<div class="para" id="p-derived-checking-inequality-5-1-4">Less than or equal to: &lt;=</div>
+<div class="autopermalink" data-description="Item"><a href="#checking-inequality-5-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-inequality-6">In the code below, we check if x is less than or equal to 10. If it is, we multiply x by 2.<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-inequality-7">
+<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id=""><textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="_editor" data-question_label="" data-codelens="false" data-timelimit="25000">x = 3
+if x &lt;=10:   #check if x is less than or equal to 10
+    x = x*2   #if so, multiply x by 2
+print(x)
+</textarea></div></div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="checking-inequality-8">If x were 15, the code above would not have multiplied x by 2, and the value of x would have stayed 15.<div class="autopermalink" data-description="Paragraph"><a href="#checking-inequality-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.2.2: Checking Inequality"><a href="#checking-inequality" title="Copy heading and permalink for Subsection 1.2.2: Checking Inequality" aria-label="Copy heading and permalink for Subsection 1.2.2: Checking Inequality">🔗</a></div></section><section class="subsection" id="else-statements"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Else Statements</span>
+</h3>
+<div class="para" id="else-statements-2">
+<div class="ptx-runestone-container"><div class="runestone explainer ac_section "><div data-component="activecode" id=""><textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="_editor" data-question_label="" data-codelens="false" data-timelimit="25000">x = 2
+if x &gt; 5:   #check if x is greater than 5
+    x = x + 10   #if so, add 10 to x
+else:
+    x = x * 4   #if not, multiply x by 4
+print(x)
+</textarea></div></div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#else-statements-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="else-statements-3">Since x is not greater than 5, the if condition is false, and we do not add 10 to x. But, since if was false, the else statement runs, and x is multiplied by 4. The value of x is now 8.<div class="autopermalink" data-description="Paragraph"><a href="#else-statements-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.2.3: Else Statements"><a href="#else-statements" title="Copy heading and permalink for Subsection 1.2.3: Else Statements" aria-label="Copy heading and permalink for Subsection 1.2.3: Else Statements">🔗</a></div></section><section class="exercises" id="exercises-if-statements"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercises-if-statements-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises-if-statements-1-1-1">Set a variable n equal to 20. Check if n is less than 100, and if it is, add 50 to n. Finally, print n. What is the value of n?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="exercises-if-statements-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercises-if-statements-1-2-1">The value of n is 70 because 20 is less than 100, so we added 50 to it.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-py">n = 20
+if n &lt; 100:
+    n = n + 50
+print(n)
+</code></pre></div>
+<div class="autopermalink" data-description="Solution 1.2.4.1.1"><a href="#exercises-if-statements-1-2" title="Copy heading and permalink for Solution 1.2.4.1.1" aria-label="Copy heading and permalink for Solution 1.2.4.1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 1.2.4.1"><a href="#exercises-if-statements-1" title="Copy heading and permalink for Exercise 1.2.4.1" aria-label="Copy heading and permalink for Exercise 1.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises-if-statements-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises-if-statements-2-1-1">Set a variable k equal to 95. Check if k is greater than or equal to 100. If it is, subtract 20 from k. Otherwise, subtract 5 from k. Finally, print k. What is the value of k?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="exercises-if-statements-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="exercises-if-statements-2-2-1">You will need to use an else statement.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.2.4.2.1"><a href="#exercises-if-statements-2-2" title="Copy heading and permalink for Hint 1.2.4.2.1" aria-label="Copy heading and permalink for Hint 1.2.4.2.1">🔗</a></div>
+</div></details><details id="exercises-if-statements-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercises-if-statements-2-3-1">k = 95 if k &gt;= 100: k = k - 20 else: k = k - 5 print(k)<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exercises-if-statements-2-3-2">The value of k is 90 because 95 is not greater than or equal to 100, so the if statement does not run. Instead, the else statement is applied. So, 5 is subtracted from k.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.2.4.2.1"><a href="#exercises-if-statements-2-3" title="Copy heading and permalink for Solution 1.2.4.2.1" aria-label="Copy heading and permalink for Solution 1.2.4.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.4.2"><a href="#exercises-if-statements-2" title="Copy heading and permalink for Exercise 1.2.4.2" aria-label="Copy heading and permalink for Exercise 1.2.4.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises-if-statements-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises-if-statements-3-1-1">Set a variable equal to 6, check if it is less than 12, and if it is, take it to the power of 3. What is the value of your variable?<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="exercises-if-statements-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="exercises-if-statements-3-2-1">You will need to name your variable first.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.2.4.3.1"><a href="#exercises-if-statements-3-2" title="Copy heading and permalink for Hint 1.2.4.3.1" aria-label="Copy heading and permalink for Hint 1.2.4.3.1">🔗</a></div>
+</div></details><details id="exercises-if-statements-3-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="exercises-if-statements-3-3-1">Remember that to take something to a power in python, you use **.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.2.4.3.2"><a href="#exercises-if-statements-3-3" title="Copy heading and permalink for Hint 1.2.4.3.2" aria-label="Copy heading and permalink for Hint 1.2.4.3.2">🔗</a></div>
+</div></details><details id="exercises-if-statements-3-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercises-if-statements-3-4-1">We will call our variable a. You could name it something else if you want. a = 6 if a &lt; 12: a = a ** 3 print(a)<div class="autopermalink" data-description="Paragraph"><a href="#exercises-if-statements-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.2.4.3.1"><a href="#exercises-if-statements-3-4" title="Copy heading and permalink for Solution 1.2.4.3.1" aria-label="Copy heading and permalink for Solution 1.2.4.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.4.3"><a href="#exercises-if-statements-3" title="Copy heading and permalink for Exercise 1.2.4.3" aria-label="Copy heading and permalink for Exercise 1.2.4.3">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.2.4"><a href="#exercises-if-statements" title="Copy heading and permalink for Exercises 1.2.4" aria-label="Copy heading and permalink for Exercises 1.2.4">🔗</a></div></section><div class="autopermalink" data-description="Section 1.2: If Statements"><a href="#if-statements" title="Copy heading and permalink for Section 1.2: If Statements" aria-label="Copy heading and permalink for Section 1.2: If Statements">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="basic-operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-looping.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
